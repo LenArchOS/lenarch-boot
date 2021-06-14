@@ -1,0 +1,11 @@
+--- a/util/grub.d/30_uefi-firmware.in
++++ b/util/grub.d/30_uefi-firmware.in
+@@ -37,7 +37,7 @@
+   gettext_printf "Adding boot menu entry for UEFI Firmware Settings ...\n" >&2
+ 
+   cat << EOF
+-menuentry '$LABEL' \$menuentry_id_option 'uefi-firmware' {
++menuentry '$LABEL' --class efi \$menuentry_id_option 'uefi-firmware' {
+ 	fwsetup
+ }
+ EOF

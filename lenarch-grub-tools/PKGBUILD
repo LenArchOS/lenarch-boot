@@ -1,0 +1,31 @@
+# Maintainer: Aditya Shakya <@adi1090x>
+
+pkgname=lenarch-grub-tools
+pkgdesc="Fixes, additions and enhancements to grub and os-prober."
+pkgver=1
+pkgrel=1
+arch=('any')
+license=('GPL')
+depends=(grub lsb-release)
+optdepends=(os-prober)
+
+source=(
+		ac-grub-update-after-kernel.hook    # Automatically updates grub.cfg after a kernel is installed/uninstalled.
+		ac-grub-fix-initrd-generation       # Command modifies os-prober and grub to fix 'initrd' line generation.
+		ac-grub-fix-initrd-generation.hook  # Calls the fixer after grub or os-prober upgrades.
+)
+
+sha512sums=('95d0a13e73c7471f4a631b2ba2100e678a2e004368716bc9ba72abadd46791c6ceeeff8977c1c776d8a4c176d3aab6dc3468392f59e6c729ce42b255058b3165'
+            '443986730cf3c208bc5eb52d14105041a1ceadb814e7c67a773fe40dcead42634be2add26c3fcf8d6164904a3a5511f51ad9480cea60cc76626244678ddfa4bf'
+            '2a12ae593de0a2a4803257fc5e7847d2523081e4455ba5438ce1770812014e4be73fa8c1bd02b6c761f5e77a0b5ebb164286ff8976a8e2c1a42e8ca886b857b5')
+
+package() {
+  cd $srcdir
+
+  install -d $pkgdir/usr/share/libalpm/hooks
+  install -Dm644 ac-grub-update-after-kernel.hook   $pkgdir/usr/share/libalpm/hooks/ac-grub-update-after-kernel.hook
+  install -Dm644 ac-grub-fix-initrd-generation.hook $pkgdir/usr/share/libalpm/hooks/ac-grub-fix-initrd-generation.hook
+
+  install -d $pkgdir/usr/bin
+  install -Dm755 ac-grub-fix-initrd-generation      $pkgdir/usr/bin/ac-grub-fix-initrd-generation
+}

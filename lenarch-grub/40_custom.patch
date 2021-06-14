@@ -1,0 +1,14 @@
+--- a/util/grub.d/40_custom.in
++++ b/util/grub.d/40_custom.in
+@@ -3,3 +3,11 @@
+ # This file provides an easy way to add custom menu entries.  Simply type the
+ # menu entries you want to add after this comment.  Be careful not to change
+ # the 'exec tail' line above.
++
++menuentry 'Reboot Computer' --class restart {
++	reboot
++}
++
++menuentry 'Shutdown Computer' --class shutdown {
++	halt
++}
