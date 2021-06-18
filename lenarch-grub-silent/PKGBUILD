@@ -73,7 +73,7 @@ sha256sums=('e5292496995ad42dabe843a0192cf2a2c502e7ffcc7479398232b10a472df77d'
             '4b189e00a8c97ec09903e9588e02fc78b4bb114ee4822fcce13811aca00c8884'
             'b7489c7facc4fb3dad4426c9c00079b64908640a2bec2409e22194daa3f72af4'
             '057f076ddca241d92a094bc05828e3eb18d3439bf4d2f3d8ca8fa1c51b5b1b2b'
-            '6e5de9c618ab02e9fde25f2c4930c8bce8bb0ccf52affc9fc4fd0c4c3389fd49')
+            '242dadfe8bf16e7b13c7e61f1afb515470e478681ed393d804549b2491ff8bdd')
 
 prepare() {
 	cd "${srcdir}/grub-${pkgver}/"
