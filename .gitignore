@@ -1,0 +1,9 @@
+build/
+*/pkg/
+*/src/
+lenarch-grub/grub
+lenarch-grub/grub-extras
+lenarch-grub/gnulib
+lenarch-grub/unifont-*
+lenarch-grub-silent/*.tar.xz
+lenarch-grub-silent/*.tar.gz
