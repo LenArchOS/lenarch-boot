@@ -1,6 +1,6 @@
 build/
 */pkg/
-*/src/
+lenarch*/src/
 lenarch-grub/grub
 lenarch-grub/grub-extras
 lenarch-grub/gnulib

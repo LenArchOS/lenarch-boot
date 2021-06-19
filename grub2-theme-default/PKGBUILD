@@ -1,0 +1,16 @@
+# Maintainer: Lena Voytek <lena@voytek.dev>
+
+pkgname=grub2-theme-default
+pkgver=1.0
+pkgrel=1
+pkgdesc="The default grub2 theme for LenArch."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	# copy whole dir recursively to destination
+	(find default -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/grub/themes/{}" \;)
+}
